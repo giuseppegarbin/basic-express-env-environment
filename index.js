@@ -8,16 +8,13 @@
  */
 
 require('dotenv').load();
-var express = require('express'); // Express web server framework
+var express = require('express');
 
-var client_id = process.env.CLIENT_ID; // Your client id
-var client_secret = process.env.CLIENT_SECRET; // Your secret
-var redirect_uri = process.env.REDIRECT_URI; // Your redirect uri
+var client_id = process.env.CLIENT_ID;          // Your client id
+var client_secret = process.env.CLIENT_SECRET;  // Your secret
+var redirect_uri = process.env.REDIRECT_URI;    // Your redirect uri
 
 var app = express();
-app.use(express.static(__dirname + '/client'));
+app.use(express.static(__dirname + '/public'));
 app.listen(8888);
 console.log('Listening on 8888');
-console.log(client_id);
-console.log(client_secret);
-console.log(redirect_uri);
